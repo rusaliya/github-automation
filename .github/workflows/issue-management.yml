@@ -1,0 +1,29 @@
+name: Auto Assign to Project(s)
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  assign_one_project:
+    runs-on: ubuntu-latest
+    name: Assign to One Project
+    steps:
+    - name: JOB 1
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: github.event.action == 'opened'
+      with:
+        project: 'https://github.com/users/rusaliya/projects/8'
+        column_name: 'Todo'
+
+    - name: JOB 2
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: |
+        contains(github.event.comment.body, '[confirm]')
+      with:
+        project: 'https://github.com/users/rusaliya/projects/8'
+        column_name: 'In Progress'
