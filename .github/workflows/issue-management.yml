@@ -25,5 +25,5 @@ jobs:
       if: |
         contains(github.event.comment.body, '[confirm]')
       with:
-        project: 'https://github.com/rusaliya/github-automation/projects/18'
+        project: 'https://github.com/rusaliya/github-automation/projects/1'
         column_name: 'In Progress'
