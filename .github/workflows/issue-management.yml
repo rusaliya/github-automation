@@ -17,7 +17,7 @@ jobs:
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: github.event.action == 'opened'
       with:
-        project: 'https://github.com/users/rusaliya/projects/8'
+        project: 'https://github.com/rusaliya/github-automation/projects/1'
         column_name: 'Todo'
 
     - name: JOB 2
@@ -25,5 +25,5 @@ jobs:
       if: |
         contains(github.event.comment.body, '[confirm]')
       with:
-        project: 'https://github.com/users/rusaliya/projects/8'
+        project: 'https://github.com/rusaliya/github-automation/projects/18'
         column_name: 'In Progress'
