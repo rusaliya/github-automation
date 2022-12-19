@@ -18,7 +18,6 @@ jobs:
       if: github.event.action == 'opened'
       with:
         project: 'https://github.com/users/rusaliya/projects/9'
-        column_name: 'Todo'
 
     - name: JOB 2
       uses: srggrs/assign-one-project-github-action@1.2.1
