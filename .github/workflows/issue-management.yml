@@ -6,7 +6,7 @@ on:
   issue_comment:
     types: [created]
 env:
-  GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+  MY_GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 
 jobs:
   assign_one_project:
@@ -17,12 +17,12 @@ jobs:
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: github.event.action == 'opened'
       with:
-        project: 'https://github.com/rusaliya/github-automation/projects/1'
+        project: 'https://github.com/users/rusaliya/projects/9'
         column_name: 'Todo'
 
     - name: JOB 2
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: contains(github.event.comment.body, '[confirm]')
       with:
-        project: 'https://github.com/rusaliya/github-automation/projects/1'
+        project: 'https://github.com/users/rusaliya/projects/9'
         column_name: 'In Progress'
