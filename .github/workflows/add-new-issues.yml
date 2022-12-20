@@ -1,0 +1,12 @@
+on:
+  issues:
+    types: opened
+jobs:
+  Add new issues to Todo column:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.TEST_TOKEN  }}"
+        project-url: "https://github.com/users/rusaliya/projects/9"
+        column-name: "Todo"
