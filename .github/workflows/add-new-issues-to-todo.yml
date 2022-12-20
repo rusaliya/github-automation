@@ -1,4 +1,4 @@
-name: Add bugs to bugs project
+name: Add new issues to 'Todo' column
 
 on:
   issues:
@@ -6,7 +6,7 @@ on:
       - opened
 
 jobs:
-  add-to-project:
+  add-to-todo:
     name: Add issue to project
     runs-on: ubuntu-latest
     steps:
