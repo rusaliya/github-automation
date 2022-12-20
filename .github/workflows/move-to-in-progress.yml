@@ -1,12 +1,15 @@
+name: Add 'In Progress' labeled issues to 'In Progress' column
+
 on:
   issues:
-    types: opened
+    types: labeled
 jobs:
-  Add_new_issues_to_Todo_column:
+  add-to-in-progress:
     runs-on: ubuntu-latest
     steps:
     - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
       with:
         action-token: "${{ secrets.TEST_TOKEN  }}"
         project-url: "https://github.com/users/rusaliya/projects/9"
-        column-name: "Todo"
+        column-name: "In Progress"
+        label-name: "In Progress"
