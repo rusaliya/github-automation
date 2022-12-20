@@ -1,0 +1,24 @@
+name: Move issues in columns by labels
+
+on:
+  issues:
+    types: labeled
+jobs:
+  add-to-in-progress:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.TEST_TOKEN  }}"
+        project-url: "https://github.com/users/rusaliya/projects/9"
+        label-name: "In Progress"
+        column-name: "In Progress"
+  add-to-done:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: konradpabjan/move-labeled-or-milestoned-issue@v2.0
+      with:
+        action-token: "${{ secrets.TEST_TOKEN  }}"
+        project-url: "https://github.com/users/rusaliya/projects/9"
+        label-name: "Done"
+        column-name: "Done"
