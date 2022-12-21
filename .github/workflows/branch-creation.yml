@@ -1,3 +1,12 @@
 on:
-  branch:
-    types: [created]
+  create
+
+jobs:
+  branch-created:
+    # This job only runs for issue comments
+    name: Branch created
+    #if: ${{ !github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          branch created
