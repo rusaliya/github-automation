@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo branch created
+          echo ${{ github.event }}
