@@ -13,5 +13,4 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const issue = github.event.ref.substring(8)
-            console.log(issue)
+            console.log(github.event.ref)
