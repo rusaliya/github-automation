@@ -15,9 +15,8 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            var issue = context.ref.split("/").pop()
             github.rest.issues.addLabels({
-              issue_number: issue,
+              issue_number: context.ref.split("/").pop().slice(1),
               owner: 'rusaliya',
               repo: 'github-automation',
               labels: ["In Progress"]
