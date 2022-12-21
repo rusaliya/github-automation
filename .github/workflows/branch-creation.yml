@@ -8,9 +8,5 @@ jobs:
     if: ${{ github.event.ref_type == 'branch' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Get issue number
-        id: issue
-        uses: actions/github-script@v6
-        with:
-          script: |
-            console.log(github.event.ref)
+      - run:
+          echo github.event.ref
