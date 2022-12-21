@@ -7,10 +7,18 @@ jobs:
     name: Branch created
     if: ${{ github.event.ref_type == 'branch' }}
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - name: Variables
         id: variables
         uses: actions/github-script@v6
         with:
           script: |
-            console.log(context.ref.split("/").pop())
+            var issue = context.ref.split("/").pop()
+            github.rest.issues.addLabels({
+              issue_number: issue,
+              owner: 'rusaliya',
+              repo: 'github-automation',
+              labels: ["In Progress"]
+            })
